@@ -276,7 +276,7 @@ call s:Col('NeomakeError', 'red')
 call s:Col('EndOfBuffer', 'base1')
 
 if has('nvim')
-  call s:Col('Float', 'cyan', 'deepblue')
+  call s:Col('Float', 'cyan', 'blue')
   call s:Col('NormalFloat', 'base7', 'base0')
   call s:Col('FloatBorder', 'base5', 'base0')
 endif

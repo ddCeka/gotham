@@ -1,6 +1,6 @@
 local theme = require("gotham.theme")
 
-local Neogotham = {
+local gotham = {
   name = 'gotham',
   config = {
     gotham_terminal = true
@@ -8,7 +8,7 @@ local Neogotham = {
 }
 
 -- called every time when theme is selected
-function Neogotham:load()
+function gotham:load()
   vim.cmd.highlight('clear')
   vim.o.background = 'dark'
   vim.o.termguicolors = true
@@ -31,7 +31,7 @@ local function process_config_boolean(self, config, key)
 end
 
 -- for explicit configuration by the user, called for example from lazy.nvim spec if specified
-function Neogotham:setup(config)
+function gotham:setup(config)
   if config == nil then
     return
   end
@@ -43,11 +43,11 @@ function Neogotham:setup(config)
   process_config_boolean(self, config, "gotham_terminal")
 end
 
-function Neogotham:set_colors()
+function gotham:set_colors()
   theme:set_highlights()
 
   -- TODO: revisit terminal colors setting
   theme:set_terminal_colors(self.config.gotham_terminal)
 end
 
-return Neogotham
+return gotham
